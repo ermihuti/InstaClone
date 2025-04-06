@@ -3,24 +3,40 @@
 	export let form;
 </script>
 
-<div class="flex justify-center items-center h-screen bg-gray-100">
-	<form action="?/login" method="POST" class="bg-white rounded-lg p-6 shadow-md max-w-sm w-full flex flex-col gap-4">
-		<h1 class="text-2xl mb-4 text-center text-gray-800">Login</h1>
+<div class="flex justify-center items-center h-screen bg-gray-100 px-4">
+	<form action="?/login" method="POST"
+	      class="bg-white shadow-xl rounded-xl p-8 max-w-sm w-full space-y-5">
 
-		<div class="flex flex-col gap-1">
-			<label for="username" class="text-sm text-gray-600">Username</label>
-			<input type="username" name="username" id="username" placeholder="Enter your username" required class="p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-blue-500" />
+		<h1 class="text-3xl font-bold text-center text-gray-800">🔐 Login</h1>
+
+		<!-- Username -->
+		<div>
+			<label for="username" class="block text-sm font-medium text-gray-700 mb-1">Username</label>
+			<input type="text" id="username" name="username" placeholder="Enter your username" required
+			       class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
 		</div>
 
-		<div class="flex flex-col gap-1">
-			<label for="password" class="text-sm text-gray-600">Password</label>
-			<input type="password" name="password" id="password" placeholder="Enter your password" required class="p-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:border-blue-500" />
+		<!-- Password -->
+		<div>
+			<label for="password" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+			<input type="password" id="password" name="password" placeholder="Enter your password" required
+			       class="w-full border border-gray-300 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
 		</div>
 
-		<button type="submit" class="bg-blue-500 text-white border-none p-2 text-base rounded-md cursor-pointer transition hover:bg-blue-700 text-center">Login</button>
+		<!-- Login Button -->
+		<button type="submit"
+		        class="w-full bg-blue-600 text-white py-3 rounded-md text-lg font-semibold hover:bg-blue-700 transition">
+			➡️ Login
+		</button>
 
+		<!-- Error Message -->
 		{#if form}
 			<Warning message={form.message} />
 		{/if}
+
+		<!-- Optional Links -->
+		<div class="text-center text-sm text-gray-500 mt-2">
+			<a href="/" class="hover:underline">← Back to Home</a>
+		</div>
 	</form>
 </div>

@@ -15,3 +15,12 @@ export async function load({ locals }) {
 		articles: rows
 	};
 }
+
+export const actions = {
+	deleteArticle: async ({ request }) => {
+		const formData = await request.formData();
+		const id = formData.get('id');
+		const connection = await createConnection();
+		const [result] = await connection.execute('DELETE FROM articles WHERE id = ?', [id]);
+	}
+};

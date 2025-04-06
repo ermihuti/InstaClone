@@ -26,6 +26,14 @@
 					<strong class="text-gray-900">Author:</strong> {article.author} |
                     <strong class="text-gray-900">Votes:</strong> {article.votes}
 				</p>
+                <form action="?/deleteArticle" method="POST" use:enhance 
+			      class="flex justify-end">
+				<input type="hidden" name="id" value={article.id} />
+				<button type="submit" 
+				        class="bg-red-500 text-white px-3 py-2 rounded text-sm hover:bg-red-700 transition">
+					Delete
+				</button>
+			</form>
 			</div>
 		{/each}
 </div>

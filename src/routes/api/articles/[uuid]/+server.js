@@ -60,7 +60,7 @@ export async function PUT({ params, request }) {
 			uuid
 		]
 	);
-
+    
 	await connection.end();
 
 	return new Response(JSON.stringify(data), {

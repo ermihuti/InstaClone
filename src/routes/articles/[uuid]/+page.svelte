@@ -12,7 +12,7 @@
     <div class="w-full flex justify-between p-3">
       <div class="flex">
         <div class="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden">
-          <img src="{article.image}" alt="uploaded">
+          <img src="../src/routes/default.jpg" alt="uploaded">
         </div>
         <span class="pt-1 ml-2 font-bold text-sm">{article.author}</span>
       </div>

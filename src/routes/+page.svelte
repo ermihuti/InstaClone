@@ -7,11 +7,11 @@
 
 <h1 class="text-2xl mb-5 text-center text-gray-800">Insta Clone</h1>
 
-
 {#each data.articles as article (article.id)}
 <div class="bg-gray-100 p-4">
   <div class="bg-white border rounded-sm max-w-md">
     <div class="flex items-center px-4 py-3">
+      <img src="src/routes/default.jpg" class="h-8 w-8 rounded-full" alt="Profile"/>
       <div class="ml-3 ">
         <span class="text-sm font-semibold antialiased block leading-tight">{article.author}</span>
       </div>

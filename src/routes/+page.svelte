@@ -19,12 +19,6 @@
     <a href="{"articles/" + article.id}"><img src="{article.image}" alt="uploaded"></a>
     <div class="flex items-center justify-between mx-4 mt-3 mb-2">
       <div class="flex gap-5">
-        <h3>Comments</h3>
-{#each comments as comment}
-    <div class="comment">
-        <p><strong>{comment.name}:</strong> {comment.text}</p>
-    </div>
-{/each}
         <form action="?/upvoteArticle" method="POST" use:enhance>
             <input type="hidden" name="id" value={article.id} />
             <button type="submit" aria-label="Like article"> 

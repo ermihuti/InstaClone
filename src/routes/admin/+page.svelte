@@ -12,28 +12,26 @@
    Add a New Article
 </a>
 
+<a href="/" class="text-white text-lg hover:text-yellow-400 transition">🏠 Home</a>
+
 <form action="/logout?/logout" method="POST">
     <button type="submit" class="bg-blue-500 text-white px-5 py-2 text-lg rounded hover:bg-blue-700">Logout</button>
 </form>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
-		{#each data.articles as article (article.id)}
-			<div class="bg-white rounded-lg p-4 shadow-lg transition-transform transform hover:-translate-y-1">
-				<img src="{article.image}" alt="uploaded" class="w-64 h-64 object-contain rounded-lg border border-gray-300">
-				<p class="text-gray-700 text-base">
-					<strong class="text-gray-900">ID:</strong> {article.id} |
-					<strong class="text-gray-900">Description:</strong> {article.description} |
-					<strong class="text-gray-900">Author:</strong> {article.author} |
-                    <strong class="text-gray-900">Votes:</strong> {article.votes}
-				</p>
-                <form action="?/deleteArticle" method="POST" use:enhance 
-			      class="flex justify-end">
-				<input type="hidden" name="id" value={article.id} />
-				<button type="submit" 
-				        class="bg-red-500 text-white px-3 py-2 rounded text-sm hover:bg-red-700 transition">
-					Delete
-				</button>
-			</form>
-			</div>
-		{/each}
+{#each data.articles as article (article.id)}
+<div class="bg-gray-100 p-4">
+  <div class="bg-white border rounded-sm max-w-md">
+    <img src="{article.image}" alt="uploaded">
+    <p class="text-gray-700 text-base">
+        <strong class="text-gray-900">ID:</strong> {article.id} |
+        <strong class="text-gray-900">Description:</strong> {article.description} |
+        <strong class="text-gray-900">Author:</strong> {article.author} |
+        <strong class="text-gray-900">Likes:</strong> {article.votes}
+    </p>
+    <div class="flex items-center justify-between mx-4 mt-3 mb-2">
+      <div class="flex gap-5">
+    </div>
+    </div>
+  </div>
 </div>
+{/each}

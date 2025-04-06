@@ -12,7 +12,7 @@
     <div class="w-full flex justify-between p-3">
       <div class="flex">
         <div class="rounded-full h-8 w-8 bg-gray-500 flex items-center justify-center overflow-hidden">
-          <img src="../src/routes/default.jpg" alt="uploaded">
+          <img src="https://aqlv60qlzxoqdolw.public.blob.vercel-storage.com/InstaClone/default-rxANWLRx2XL8cL3gBADi2CIc33LhCB.jpg" alt="uploaded">
         </div>
         <span class="pt-1 ml-2 font-bold text-sm">{article.author}</span>
       </div>
@@ -29,12 +29,28 @@
           <span class="font-medium mr-2">{article.author}</span> {article.description}
         </div>
       </div>
-      <div class="text-sm mb-2 text-gray-400 cursor-pointer font-medium">View all 14 comments</div>
+      <h3>Comments</h3>
+      
       <div class="mb-2">
+        {#each data.comments as comment}
         <div class="mb-2 text-sm">
-          <span class="font-medium mr-2">razzle_dazzle</span> Dude! How cool! I went to New Zealand last summer and had a blast taking the tour! So much to see! Make sure you bring a good camera when you go!
+          <span class="font-medium mr-2">{comment.name}</span> {comment.text}
         </div>
+        {/each}
       </div>
+    
     </div>
+    
+    <form action="?/addComment" method="POST">
+        <input type="hidden" name="article_id" value={article.id} />
+        
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required />
+        
+        <label for="text">Your Comment:</label>
+        <textarea id="text" name="text" required></textarea>
+        
+        <button type="submit">Add Comment</button>
+    </form>
   </div>
   {/each}

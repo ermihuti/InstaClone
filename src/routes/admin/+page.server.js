@@ -7,9 +7,7 @@ export async function load({ locals }) {
 	}
 
 	let connection = await createConnection();
-	let [rows] = await connection.execute(
-		'SELECT * from articles'
-	);
+	let [rows] = await connection.execute('SELECT * from articles');
 
 	return {
 		articles: rows

@@ -52,15 +52,9 @@ export async function PUT({ params, request }) {
              author = COALESCE(?, author), 
              votes = COALESCE(?, votes)
          WHERE id = ?`,
-		[
-			data.image ?? null,
-			data.description ?? null,
-			data.author ?? null,
-			data.votes ?? null,
-			uuid
-		]
+		[data.image ?? null, data.description ?? null, data.author ?? null, data.votes ?? null, uuid]
 	);
-    
+
 	await connection.end();
 
 	return new Response(JSON.stringify(data), {

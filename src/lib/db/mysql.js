@@ -1,7 +1,9 @@
 import mysql from 'mysql2/promise';
 
+// Import DB credentials from .env file
 import { DB_HOST, DB_USER, DB_PORT, DB_PASSWORD, DB_NAME } from '$env/static/private';
 
+// Create and return a new DB connection
 export async function createConnection() {
 	return mysql.createConnection({
 		host: DB_HOST,

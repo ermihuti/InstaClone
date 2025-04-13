@@ -2,19 +2,20 @@ import { createConnection } from '$lib/db/mysql';
 import { redirect } from '@sveltejs/kit';
 
 export const actions = {
+	// Logout action
 	logout: async ({ locals, cookies }) => {
 		if (!locals.user) {
-			redirect(302, '/');
+			redirect(302, '/'); // Redirect if no user is logged in
 		}
 
-		//  Delete current session in the database
+		// Clear session info from database
 		let connection = await createConnection();
 		await connection.execute(
 			'UPDATE users SET session_token = NULL, session_expiration = NULL WHERE id = ?',
 			[locals.user.id]
 		);
 
-		// Delete session cookie
+		// Remove session cookie
 		cookies.delete('session', { path: '/' });
 
 		// Redirect to home page

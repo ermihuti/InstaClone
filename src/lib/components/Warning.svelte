@@ -3,20 +3,9 @@
 	const { message } = $props();
 </script>
 
-<div transition:slide>
+<div
+	transition:slide
+	class="bg-red-100 text-red-600 border border-red-600 px-4 py-2 rounded text-sm mb-4 text-center shadow-md"
+>
 	{message}
 </div>
-
-<style>
-	div {
-		background-color: #ffe5e5;
-		color: #d9534f;
-		border: 1px solid #d9534f;
-		padding: 10px 15px;
-		border-radius: 4px;
-		font-size: 14px;
-		margin-bottom: 15px;
-		text-align: center;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
-</style>

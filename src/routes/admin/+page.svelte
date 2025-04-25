@@ -5,14 +5,12 @@
 	let { data } = $props();
 </script>
 
-<!-- Header -->
 <header class="sticky top-0 z-50 mb-8 bg-white shadow-md">
 	<div class="mx-auto flex max-w-7xl justify-center px-4 py-4">
 		<h1 class="text-3xl font-bold text-gray-800">🛠️ Admin Dashboard</h1>
 	</div>
 </header>
 
-<!-- Actions -->
 <div class="mb-8 flex flex-wrap justify-center gap-4 px-4">
 	<a
 		href="/admin/new"
@@ -36,7 +34,6 @@
 	</form>
 </div>
 
-<!-- Articles -->
 <div class="grid grid-cols-1 gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3">
 	{#each data.articles as article (article.id)}
 		<div class="rounded-xl border bg-white p-4 shadow-md">

@@ -3,7 +3,6 @@
 	let { data } = $props();
 </script>
 
-<!-- Header -->
 <header class="sticky top-0 z-50 bg-white shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-center px-4 py-4">
 		<a href="/">
@@ -12,15 +11,12 @@
 	</div>
 </header>
 
-<!-- Article Feed -->
 <main class="min-h-screen bg-gray-100 px-4 py-10">
 	{#each data.articles as article (article.id)}
 		<div
 			class="mx-auto mb-10 flex max-w-5xl flex-col overflow-hidden rounded-xl bg-white shadow-md transition hover:shadow-lg lg:flex-row"
 		>
-			<!-- Left: Image + Info -->
 			<div class="flex flex-col gap-3 p-4 lg:w-2/3">
-				<!-- Author Info -->
 				<div class="flex items-center justify-between">
 					<div class="flex items-center gap-3">
 						<img
@@ -32,14 +28,12 @@
 					</div>
 				</div>
 
-				<!-- Image -->
 				<img
 					src={article.image}
 					alt="Uploaded"
 					class="h-[400px] w-full rounded-md object-cover transition hover:opacity-90"
 				/>
 
-				<!-- Like and Description -->
 				<div class="flex items-center justify-between">
 					<form action="?/upvoteArticle" method="POST" use:enhance>
 						<input type="hidden" name="id" value={article.id} />
@@ -62,18 +56,15 @@
 					>
 				</div>
 
-				<!-- Description -->
 				<p class="text-sm text-gray-700">
 					<span class="mr-2 font-semibold">{article.author}</span>
 					{article.description}
 				</p>
 			</div>
 
-			<!-- Right: Comments -->
 			<div class="border-t border-gray-200 p-5 lg:w-1/3 lg:border-t-0 lg:border-l">
 				<h3 class="mb-4 text-lg font-bold text-gray-800">Comments</h3>
 
-				<!-- Show Comments -->
 				<div class="mb-6 max-h-60 space-y-3 overflow-y-auto">
 					{#each data.comments as comment}
 						<p class="text-sm text-gray-700">
@@ -83,7 +74,6 @@
 					{/each}
 				</div>
 
-				<!-- Add Comment -->
 				<form action="?/addComment" method="POST" class="space-y-3" use:enhance>
 					<input type="hidden" name="article_id" value={article.id} />
 

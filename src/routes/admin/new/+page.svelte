@@ -2,13 +2,11 @@
 	let { data } = $props();
 </script>
 
-<!-- Page Header -->
 <section class="mx-auto mb-8 max-w-xl text-center">
 	<h1 class="mb-3 text-4xl font-bold text-gray-800">🖼️ Create a New Article</h1>
 	<p class="text-gray-500">Fill in the details below to add a new article.</p>
 </section>
 
-<!-- Navigation Buttons -->
 <div class="mb-6 flex justify-center gap-4">
 	<a
 		href="/admin"
@@ -22,14 +20,12 @@
 	>
 </div>
 
-<!-- Form Container -->
 <form
 	method="POST"
 	action="?/createArticle"
 	enctype="multipart/form-data"
 	class="mx-auto max-w-xl space-y-6 rounded-2xl border border-gray-100 bg-white p-8 shadow-xl"
 >
-	<!-- Image Upload -->
 	<div>
 		<label for="image" class="mb-1 block text-sm font-semibold text-gray-700">Image</label>
 		<input
@@ -39,7 +35,6 @@
 		/>
 	</div>
 
-	<!-- Description -->
 	<div>
 		<label for="description" class="mb-1 block text-sm font-semibold text-gray-700"
 			>Description</label
@@ -52,7 +47,6 @@
 		></textarea>
 	</div>
 
-	<!-- Author -->
 	<div>
 		<label for="author" class="mb-1 block text-sm font-semibold text-gray-700">Author</label>
 		<input
@@ -64,7 +58,6 @@
 		/>
 	</div>
 
-	<!-- Submit Button -->
 	<button
 		type="submit"
 		class="w-full rounded-lg bg-blue-600 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"

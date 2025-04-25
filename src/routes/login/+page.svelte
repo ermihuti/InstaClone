@@ -11,7 +11,6 @@
 	>
 		<h1 class="text-center text-3xl font-bold text-gray-800">🔐 Login</h1>
 
-		<!-- Username -->
 		<div>
 			<label for="username" class="mb-1 block text-sm font-medium text-gray-700">Username</label>
 			<input
@@ -24,7 +23,6 @@
 			/>
 		</div>
 
-		<!-- Password -->
 		<div>
 			<label for="password" class="mb-1 block text-sm font-medium text-gray-700">Password</label>
 			<input
@@ -37,7 +35,6 @@
 			/>
 		</div>
 
-		<!-- Login Button -->
 		<button
 			type="submit"
 			class="w-full rounded-md bg-blue-600 py-3 text-lg font-semibold text-white transition hover:bg-blue-700"
@@ -45,12 +42,10 @@
 			➡️ Login
 		</button>
 
-		<!-- Error Message -->
 		{#if form}
 			<Warning message={form.message} />
 		{/if}
 
-		<!-- Optional Links -->
 		<div class="mt-2 text-center text-sm text-gray-500">
 			<a href="/" class="hover:underline">← Back to Home</a>
 		</div>

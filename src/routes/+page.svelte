@@ -3,7 +3,6 @@
 	let { data } = $props();
 </script>
 
-<!-- Header -->
 <header class="sticky top-0 z-50 bg-white shadow-md">
 	<div class="mx-auto flex max-w-7xl items-center justify-center px-4 py-4">
 		<a href="/">
@@ -12,7 +11,6 @@
 	</div>
 </header>
 
-<!-- Main Content -->
 <main class="min-h-screen bg-gray-100 py-10">
 	<div
 		class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
@@ -21,7 +19,6 @@
 			<div
 				class="flex flex-col overflow-hidden rounded-xl bg-white shadow-md transition duration-300 hover:shadow-lg"
 			>
-				<!-- Top: User -->
 				<div class="flex items-center gap-3 px-4 py-3">
 					<img
 						src="https://aqlv60qlzxoqdolw.public.blob.vercel-storage.com/InstaClone/default-rxANWLRx2XL8cL3gBADi2CIc33LhCB.jpg"
@@ -31,7 +28,6 @@
 					<span class="text-sm font-semibold text-gray-700">{article.author}</span>
 				</div>
 
-				<!-- Image -->
 				<a href={`articles/${article.id}`}>
 					<img
 						src={article.image}
@@ -40,7 +36,6 @@
 					/>
 				</a>
 
-				<!-- Like Button -->
 				<div class="flex items-center justify-between px-4 py-3">
 					<form action="?/upvoteArticle" method="POST" use:enhance>
 						<input type="hidden" name="id" value={article.id} />
